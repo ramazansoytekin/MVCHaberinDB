@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/template/Style.css" rel="stylesheet" />
+    <script src="~/Scripts/JSliders/JSlider/jquery-1.11.1.min.js"></script>
+    <script src="~/Scripts/JSliders/JSlider/JSlider_js.js"></script>
+    <link href="~/Scripts/JSliders/JSlider/JSlider_Style.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <div id="Header">
+        <div class="HeaderTop">
+            <ul>
+                @if (Session["oturum"] == null && Session["yonetim"] == null)
+                {
+                    <li>@Html.ActionLink("Oturum Aç", "Login", "Home")</li>
+                    <li>@Html.ActionLink("Kayıt Ol", "SingUp", "Home") </li>
+                }
+
+                @if (Session["oturum"] != null)
+                {
+                    User girisYapan = (User)Session["oturum"];
+                    <li> @Html.ActionLink("Profili Gör", "Details", "Customer", new { id = girisYapan.UserID }, null) </li>
+                    <li> @Html.ActionLink("Profili Düzenle", "Edit", "Customer", new { id = girisYapan.UserID }, null) </li>
+                    <li> @Html.ActionLink("Profili Sil", "Delete", "Customer", new { id = girisYapan.UserID }, null) </li>
+                }
+
+                @if (Session["oturum"] != null || Session["yonetim"] != null)
+                {
+                    <li> @Html.ActionLink("Çıkış", "Exit", "Home") </li>
+                }
+            </ul>
+        </div>
+
+        <div class="Logo">
+            @if (Session["oturum"] == null)
+            {
+
+                <a href="/Home"><img src="~/Content/template/images/log.png" /></a>
+            }
+            else
+            {
+
+                <a href="/Customer"><img src="~/Content/template/images/log.png" /></a>
+            }
+
+        </div>
+        <div class="Menu">
+            <ul>
+                @if (Session["yonetim"] == null)
+                {
+                    <li>@Html.ActionLink("Manşet", "ListNewsByCategory", new { cID = 3 }, null)</li>
+                    <li>@Html.ActionLink("Spor", "ListNewsByCategory", new { cID = 1 }, null)</li>
+                    <li>@Html.ActionLink("Ekonomi", "ListNewsByCategory", new { cID = 2 }, null)</li>
+                    <li>@Html.ActionLink("Magazin", "ListNewsByCategory", new { cID = 4 }, null)</li>
+                    <li>@Html.ActionLink("Emlak", "ListNewsByCategory", new { cID = 5 }, null)</li>
+                    <li>@Html.ActionLink("Sağlık", "ListNewsByCategory", new { cID = 6 }, null)</li>
+                    <li>@Html.ActionLink("Teknoloji", "ListNewsByCategory", new { cID = 7 }, null)</li>
+                    <li>@Html.ActionLink("Politika", "ListNewsByCategory", new { cID = 8 }, null)</li>
+                    <li>@Html.ActionLink("Dünya", "ListNewsByCategory", new { cID = 9 }, null)</li>
+                }
+            </ul>
+        </div>
+    </div>
+
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

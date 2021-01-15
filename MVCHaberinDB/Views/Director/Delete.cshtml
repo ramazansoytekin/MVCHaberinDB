@@ -1,0 +1,107 @@
+﻿@model MVCHaberinDB.Models.Director
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div id="Container">
+    <div id="TopBar">
+    </div>
+    <div id="KayitAlan">
+
+
+
+        <h3>Silmek istediğinize emin misiniz?</h3>
+        <fieldset>
+            <legend>Yönetici</legend>
+
+            <div class="display-label">
+                @Html.Label("Adı:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.FirstName)
+            </div>
+
+            <div class="display-label">
+                @Html.Label("Soyadı:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.LastName)
+            </div>
+
+            <div class="display-label">
+                @Html.Label("Ünvan:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Title)
+            </div>
+
+            <div class="display-label">
+                @Html.Label("Doğum Tarihi:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.BirthDate)
+            </div>
+
+            <div class="display-label">
+                @Html.Label("Kovulma Tarihi:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.HireDate)
+            </div>
+
+            <div class="display-label">
+                @Html.Label("Adres:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Address)
+            </div>
+
+            <div class="display-label">
+                @Html.Label("Amiri:")
+
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Director1.FirstName)
+            </div>
+
+            <div class="display-label">
+                @Html.Label("Resim:")
+            </div>
+            <div class="display-field">
+                <img src="~/Content/images/directorPhotos/@Model.Imagepath" style="width:150px; height:120px;" />
+            </div>
+
+            <div class="display-label">
+                @Html.Label("E-Mail:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Email)
+            </div>
+
+            <div class="display-label">
+                @Html.Label("Şifre:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Password)
+            </div>
+
+            <div class="display-label">
+                @Html.Label("Rol:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Role.RoleName)
+            </div>
+        </fieldset>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <p>
+                <input type="submit" value="Sil" /> |
+                @Html.ActionLink("Index'e Dön", "Index")
+            </p>
+        }
+
+    </div>
+</div>

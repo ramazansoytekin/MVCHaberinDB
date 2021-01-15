@@ -1,0 +1,25 @@
+﻿/*Reset Css uygulayarak Tüm Değerleri Sıfırlıyoruz.*/
+* { margin:0; padding:0; border:0; font:12px Arial; }
+
+/*Sayfa içerisinde bulunan tüm a etiketlerinin altı çizili özelliğini kapatıyoruz.*/
+a { text-decoration:none; }
+
+/*Sayfa içerisindeki tüm ul'lerin liste stilini kapatıyoruz.*/
+ul { list-style:none; }
+
+/* Slider'ımızın boyutlarını ve konumunu ayarlıyoruz. */
+#JSlider { margin:5px; width:990px; height:400px; }
+.JSlider { width:990px; height:400px; overflow:hidden; position:relative; }
+    .JSlider ul { overflow:hidden; z-index:0; }
+.JSlider ul li { width:990px; height:400px; float:left; position:relative; }
+    .JSlider ul li img { width:990px; height:400px; }
+
+/*Slider içindeki İleri Geri butonlarımızın konumlarını ve diğer özelliklerini ayarlıyoruz. */
+.navButton { background:#000; color:#fff; position:absolute; text-align:center; opacity:0.5; font-size:24px; transition:300ms; top:175px; width:50px; height:50px; line-height:50px; }
+.navButton:hover { opacity:0.9; }
+#onceki { left:0; }
+#sonraki { right:0; }
+/*Açıklama penceresinin konumu ve görüntü özellikleri*/
+.desc { width:1000px; height:50px; top:350px; transition:300ms; background:#000; color:#fff; position:absolute; text-align:center; font-size:24px; transition:300ms; }
+.desc:hover { opacity:0.9; width:1000px; height:100px; top:300px; }
+.desc h2 { color:#fff; font-size:18px; font-weight:bold; padding:5px;}

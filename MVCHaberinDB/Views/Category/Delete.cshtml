@@ -1,0 +1,42 @@
+﻿@model MVCHaberinDB.Models.Category
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div id="Container">
+    <div id="TopBar">
+    </div>
+    <div id="KayitAlan">
+
+
+
+        <h3>Silmek istediğinize emin misiniz?</h3>
+        <fieldset>
+            <legend>Kategori</legend>
+
+            <div class="display-label">
+                @Html.DisplayName("Adı:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.CategoryName)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Açıklama:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Description)
+            </div>
+        </fieldset>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <p>
+                <input type="submit" value="Sil" /> |
+                @Html.ActionLink("Index'e Dön", "Index")
+            </p>
+        }
+    </div>
+</div>

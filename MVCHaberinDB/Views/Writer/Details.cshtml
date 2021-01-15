@@ -1,0 +1,60 @@
+﻿@model MVCHaberinDB.Models.Writer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+<div id="Container">
+    <div id="TopBar">
+    </div>
+    <div id="Content">
+
+
+
+        <fieldset>
+            <legend>Yazar</legend>
+
+            <div class="display-label">
+                @Html.DisplayName("Adı:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.FirstName)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Soyadı:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.LastName)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Resim:")
+            </div>
+            <div class="display-field">
+                <img src="~/Content/images/writerPhotos/@Model.ImagePath" style="width:150px; height:120px;" />
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Adres:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Address)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("E-Mail:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Email)
+            </div>
+
+        </fieldset>
+        <p>
+            @Html.ActionLink("Düzenle", "Edit", new { id = Model.WriterID }) |
+            @Html.ActionLink("Index'e Dön", "Index")
+        </p>
+    </div>
+
+</div>

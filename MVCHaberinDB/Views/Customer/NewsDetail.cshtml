@@ -1,0 +1,100 @@
+﻿@model Tuple<List<Yorum>, Comment, News>
+
+@{
+    ViewBag.Title = "NewsDetail";
+}
+<br />
+@if (ViewBag.Message != null)
+{
+    @ViewBag.Message
+}
+else
+{
+
+    <div id="HaberDetay">
+        <div class="HaberSol">
+            <p class="HaberUstBilgi">@Model.Item3.PublishDate.Value</p>
+            <p class="HaberUstBilgi">Görüntülenme : @Model.Item3.ViewPoint  Yorum : @Model.Item3.Comments.Count</p>
+            <img src="~/Content/images/uploads/@Model.Item3.PhotoPath"/>
+
+
+            <h2 class="HaberBaslik">@Model.Item3.NewsTitle</h2>
+
+            <p class="HaberAciklama">@Model.Item3.NewsDescription</p>
+
+
+            <p class="HaberDetay">@Model.Item3.NewsContent</p>
+            <div style="margin-top:30px"></div>
+
+            @using (Ajax.BeginForm("Create", "Customer", FormMethod.Post, new AjaxOptions { OnSuccess = "success" }))
+            {
+                <div class="editor-label">
+                    @Html.Label("Yorum Yap")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Item2.CommentText)
+                    @Html.ValidationMessageFor(model => model.Item2.CommentText)
+                </div>
+
+                <p>
+                    <input class="yGonder" type="submit" value="Yorum Yap" />
+                </p>
+            }
+
+            <p class="HaberAciklama">Yorumlar</p>
+
+            <div id="Yorum">
+                @foreach (Yorum item in Model.Item1)
+                {
+                    <span>@item.KullaniciAdi @item.KullaniciSoyadi</span>
+                    <br />
+                    <span>@item.YorumMetni</span>
+                    <br /><br />
+                }
+            </div>
+
+            @section scripts{
+                <script type="text/javascript">
+
+                    function success(result) {
+                        if (result != null) {
+                            $("form")[0].reset(); //Formu temizlemek için kullanıyoruz
+                            $("#Yorum").html(''); //Yorum divini temizle
+
+                            $.each(result, function (key, value) {
+                                $("#Yorum").append(value.KullaniciAdi + '&nbsp;').append(value.KullaniciSoyadi + '</br>').append(value.YorumMetni + '<br /></br>');
+                            })
+                        }
+                    }
+                </script>
+            }
+        </div>
+        <div class="HaberSag">
+            <div class="Yazar">
+                @foreach (Writer item in Model.Item3.Writers)
+            {
+                if (item.ImagePath == null)
+                {
+                    <img src="~/Content/images/writerPhotos/noimage.png"/>
+                }
+                else
+                {
+                    <img src="~/Content/images/writerPhotos/@item.ImagePath"/>
+                }
+                <span id="yazar">@item.FirstName @item.LastName</span>
+            }
+                </div>
+                        @foreach (News item in Model.Item3.Category.News.OrderByDescending(n => n.ViewPoint).Take(6))
+                    {
+                        if (item.NewsID != Model.Item3.NewsID)
+                        {
+                            <div class="YanHaber">
+                                <a href="?nID=@item.NewsID"><img src="~/Content/images/uploads/@item.PhotoPath" /></a>
+                                <span>@Html.ActionLink(@item.NewsTitle, "NewsDetail", "Customer", new { nID = item.NewsID }, null)</span>
+
+                            </div>
+                        }
+                    }
+            </div>
+    </div>
+}

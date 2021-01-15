@@ -1,0 +1,44 @@
+﻿@model User
+@{
+    ViewBag.Title = "Login";
+}
+
+<link href="~/Content/template/Login.css" rel="stylesheet" />
+
+<div id="TopBar">
+</div>
+
+<div id="Container">
+
+    <form method="post">
+        <table>
+            <tr>
+                <td>E-Mail</td>
+                <td>: </td>
+                <td>
+                    @Html.TextBoxFor(model => model.Email)
+                </td>
+            </tr>
+            <tr>
+                <td>Şifre</td>
+                <td>: </td>
+                <td>
+                    @Html.TextBoxFor(model => model.Password)
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <button class="submit">Giriş Yap</button>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    @if (ViewBag.Message != null)
+                    {
+                        @ViewBag.Message
+                    }
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</div>

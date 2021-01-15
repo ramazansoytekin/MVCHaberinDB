@@ -1,0 +1,107 @@
+﻿@model MVCHaberinDB.Models.News
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+<div id="Container">
+    <div id="TopBar">
+    </div>
+    <div id="KayitAlan">
+
+
+        <fieldset>
+            <legend>Haber</legend>
+
+            <div class="display-label">
+                @Html.DisplayName("Başlık:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.NewsTitle)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Açıklama:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.NewsDescription)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("İçerik:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.NewsContent)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Kategori:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Category.CategoryName)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Yayınlanma Tarihi:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.PublishDate)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Güncelleme Tarihi:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.DateOfUpdate)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Görüntülenme:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.ViewPoint)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Resim:")
+            </div>
+            <div class="display-field">
+                <img src="~/Content/images/uploads/@Model.PhotoPath" style="width:150px; height:120px;" />
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Ajans:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Supplier.CompanyName)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Aktif:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.isDeleted)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Manşet:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.isBigNew)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Yönetici:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Director.FirstName)
+            </div>
+        </fieldset>
+        <p>
+            @Html.ActionLink("Düzenle", "Edit", new { id = Model.NewsID }) |
+            @Html.ActionLink("Index'e Dön", "Index")
+        </p>
+
+    </div>
+</div>

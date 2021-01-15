@@ -1,0 +1,116 @@
+﻿@model MVCHaberinDB.Models.Supplier
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<div id="Container">
+    <div id="TopBar">
+    </div>
+    <div id="Content">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <fieldset>
+                <legend>Ajans</legend>
+
+                <div class="editor-label">
+                    @Html.Label("Adı:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.CompanyName)
+                    @Html.ValidationMessageFor(model => model.CompanyName)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Sorumlu:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.ContactName)
+                    @Html.ValidationMessageFor(model => model.ContactName)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Adres:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Address)
+                    @Html.ValidationMessageFor(model => model.Address)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Bölge:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Region)
+                    @Html.ValidationMessageFor(model => model.Region)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Posta Kodu:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.PostalCode)
+                    @Html.ValidationMessageFor(model => model.PostalCode)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Ülke:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Country)
+                    @Html.ValidationMessageFor(model => model.Country)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Telefon:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Phone)
+                    @Html.ValidationMessageFor(model => model.Phone)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Fax:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Fax)
+                    @Html.ValidationMessageFor(model => model.Fax)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("E-Mail:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Web Adresi:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.HomePage)
+                    @Html.ValidationMessageFor(model => model.HomePage)
+                </div>
+
+                <p>
+                    <input type="submit" value="Kaydet" />
+                </p>
+            </fieldset>
+        }
+
+        <div>
+            @Html.ActionLink("Index'e Dön", "Index")
+        </div>
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+    </div>
+</div>

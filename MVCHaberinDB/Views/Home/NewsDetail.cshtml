@@ -1,0 +1,74 @@
+﻿@model News
+@{
+    ViewBag.Title = "NewsDetail";
+}
+
+<br />
+@if (ViewBag.Message != null)
+{
+    @ViewBag.Message
+}
+else
+{
+    <div id="HaberDetay">
+        <div class="HaberSol">
+            <p class="HaberUstBilgi">@Model.PublishDate.Value</p>
+            <p class="HaberUstBilgi">Görüntülenme : @Model.ViewPoint  Yorum : @Model.Comments.Count</p>
+                
+            <img src="~/Content/images/uploads/@Model.PhotoPath" />
+
+
+            <h2 class="HaberBaslik">@Model.NewsTitle</h2>
+
+            <p class="HaberAciklama">@Model.NewsDescription</p>
+
+
+            <p class="HaberDetay">@Model.NewsContent</p>
+            <div style="margin-top:30px"></div>
+
+            <p class="HaberAciklama">Yorumlar</p>
+
+            <div id="Yorum">
+                @foreach (Comment item in Model.Comments)
+                {
+                    <span>@item.User.FirstName @item.User.LastName</span>
+                    <br />
+                    <span>@item.CommentText</span>
+                    <br /><br />
+                }
+            </div>
+        </div>
+
+        <div class="HaberSag">
+            <div class="Yazar">
+                @foreach (Writer item in Model.Writers)
+                {
+                    if (item.ImagePath == null)
+                    {
+                        <img src="~/Content/images/writerPhotos/noimage.png" />
+                    }
+                    else
+                    {
+                        <img src="~/Content/images/writerPhotos/@item.ImagePath">
+                    }
+                    <span id="yazar">@item.FirstName  @item.LastName</span>
+                }
+            </div>
+
+            @foreach (News item in Model.Category.News.OrderByDescending(n => n.ViewPoint).Take(6))
+            {
+
+                if (item.NewsID != Model.NewsID)
+                {
+                    <div class="YanHaber">
+                        <a href="?nID=@item.NewsID"><img src="~/Content/images/uploads/@item.PhotoPath" /></a>
+                        <span>@Html.ActionLink(@item.NewsTitle, "NewsDetail", "Home", new { nID = item.NewsID }, null)</span>
+                    </div>
+                }
+            }
+
+        </div>
+    </div>
+}
+
+

@@ -1,0 +1,98 @@
+﻿@model MVCHaberinDB.Models.Supplier
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<div id="Container">
+    <div id="TopBar">
+    </div>
+    <div id="Content">
+  
+
+        <h3>Silmek istediğinize emin misiniz?</h3>
+    <fieldset>
+        <legend>Ajans</legend>
+
+        <div class="display-label">
+            @Html.DisplayName("Adı:")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.CompanyName)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayName("Sorumlu:")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ContactName)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayName("Adres:")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Address)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayName("Bölge:")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Region)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayName("Posta Kodu:")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PostalCode)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayName("Ülke:")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Country)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayName("Telefon:")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Phone)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayName("Fax:")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Fax)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayName("E-Mail:")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Email)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayName("Web Adresi:")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.HomePage)
+        </div>
+    </fieldset>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <p>
+            <input type="submit" value="Sil" /> |
+            @Html.ActionLink("Index'e Dön", "Index")
+        </p>
+    }
+</div>    
+</div>

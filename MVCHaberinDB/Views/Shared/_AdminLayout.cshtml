@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/admintemplate/Style.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div id="Header">
+        <div class="HeaderTop">
+            <ul>
+                @if (Session["calisan"] != null)
+                {
+                    <li>@Html.ActionLink("Haberler", "Index", "News")</li>
+                    <li>@Html.ActionLink("Yorumlar", "Index", "Comment") </li>
+                    <li>@Html.ActionLink("Kullanıcılar", "Index", "User") </li>
+                }
+                @if (Session["ceo"] != null)
+                {
+                    <li> @Html.ActionLink("Yöneticiler", "Index", "Director") </li>
+                    <li> @Html.ActionLink("Roller", "Index", "Role") </li>
+                }
+                @if (Session["yonetim"] != null) 
+                {
+                    <li> @Html.ActionLink("Kategoriler", "Index", "Category") </li>
+                    
+                    <li> @Html.ActionLink("Ajanslar", "Index", "Supplier") </li>
+                    <li> @Html.ActionLink("Yazarlar", "Index", "Writer") </li>
+                }
+                    <li> @Html.ActionLink("Çıkış", "Exit", "Home") </li>
+            </ul>
+        </div>
+    </div>
+
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

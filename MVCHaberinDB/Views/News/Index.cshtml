@@ -1,0 +1,109 @@
+﻿@model IEnumerable<MVCHaberinDB.Models.News>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<div id="Container">
+    <div id="TopBar">
+    </div>
+    <div id="Header">
+
+
+
+        <p>
+            @Html.ActionLink("Haber Ekle", "Create")
+        </p>
+        <table>
+            <tr>
+                <th>
+                    @Html.DisplayName("Başlık")
+                </th>
+                <th>
+                    @Html.DisplayName("Açıklama")
+                </th>
+                <th>
+                    @Html.DisplayName("İçerik")
+                </th>
+                <th>
+                    @Html.DisplayName("Kategori")
+                </th>
+                <th>
+                    @Html.DisplayName("Yayınlanma Tarihi")
+                </th>
+                <th>
+                    @Html.DisplayName("Güncelleme Tarihi")
+                </th>
+                <th>
+                    @Html.DisplayName("Görüntülenme")
+                </th>
+
+                <th>
+                    @Html.DisplayName("Resim")
+                </th>
+                <th>
+                    @Html.DisplayName("Ajans")
+                </th>
+                <th>
+                    @Html.DisplayName("Aktif")
+                </th>
+                <th>
+                    @Html.DisplayName("Manşet")
+                </th>
+                <th>
+                    @Html.DisplayName("Yönetici")
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NewsTitle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NewsDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NewsContent)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PublishDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateOfUpdate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ViewPoint)
+                    </td>
+                    <td>
+                        <img src="~/Content/images/uploads/@item.PhotoPath"style="width:150px; height:120px;" />
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Supplier.CompanyName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.isDeleted)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.isBigNew)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Director.FirstName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Düzenle", "Edit", new { id = item.NewsID }) |
+                        @Html.ActionLink("Detay", "Details", new { id = item.NewsID }) |
+                        @Html.ActionLink("Sil", "Delete", new { id = item.NewsID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

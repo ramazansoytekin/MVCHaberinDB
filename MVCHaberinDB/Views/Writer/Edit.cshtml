@@ -1,0 +1,81 @@
+﻿@model MVCHaberinDB.Models.Writer
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<div id="Container">
+    <div id="TopBar">
+    </div>
+    <div id="Content">
+
+
+        @using (Html.BeginForm("Edit", "Writer", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <fieldset>
+                <legend>Yazar</legend>
+
+                @Html.HiddenFor(model => model.WriterID)
+
+                <div class="editor-label">
+                    @Html.Label("Adı:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.FirstName)
+                    @Html.ValidationMessageFor(model => model.FirstName)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Soyadı:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.LastName)
+                    @Html.ValidationMessageFor(model => model.LastName)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Resim:")
+                </div>
+                <div class="editor-field">
+                    <img src="~/Content/images/writerPhotos/@Model.ImagePath" style="width:150px; height:120px;" />
+                    @Html.ValidationMessageFor(model => model.ImagePath)
+                    <span>Resim Seç</span>
+                    <input name="fluResim" type="file" />
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Adres:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Address)
+                    @Html.ValidationMessageFor(model => model.Address)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("E-Mail:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+
+                <p>
+                    <input type="submit" value="Kaydet" />
+                </p>
+            </fieldset>
+        }
+
+        <div>
+            @Html.ActionLink("Index'e Dön", "Index")
+        </div>
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+    </div>
+</div>

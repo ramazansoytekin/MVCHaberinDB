@@ -1,0 +1,8 @@
+C:\Users\rs\documents\visual studio 2013\Projects\MVCHaberinDB\WCFHaberinDBService\bin\Debug\WCFHaberinDBService.dll.config
+C:\Users\rs\documents\visual studio 2013\Projects\MVCHaberinDB\WCFHaberinDBService\bin\Debug\WCFHaberinDBService.dll
+C:\Users\rs\documents\visual studio 2013\Projects\MVCHaberinDB\WCFHaberinDBService\bin\Debug\WCFHaberinDBService.pdb
+C:\Users\rs\documents\visual studio 2013\Projects\MVCHaberinDB\WCFHaberinDBService\bin\Debug\EntityFramework.dll
+C:\Users\rs\documents\visual studio 2013\Projects\MVCHaberinDB\WCFHaberinDBService\bin\Debug\EntityFramework.xml
+C:\Users\rs\documents\visual studio 2013\Projects\MVCHaberinDB\WCFHaberinDBService\obj\Debug\WCFHaberinDBService.csprojResolveAssemblyReference.cache
+C:\Users\rs\documents\visual studio 2013\Projects\MVCHaberinDB\WCFHaberinDBService\obj\Debug\WCFHaberinDBService.dll
+C:\Users\rs\documents\visual studio 2013\Projects\MVCHaberinDB\WCFHaberinDBService\obj\Debug\WCFHaberinDBService.pdb

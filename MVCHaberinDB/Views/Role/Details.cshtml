@@ -1,0 +1,29 @@
+﻿@model MVCHaberinDB.Models.Role
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<div id="Container">
+    <div id="TopBar">
+    </div>
+    <div id="Content">
+
+
+        <fieldset>
+            <legend>Rol</legend>
+
+            <div class="display-label">
+                @Html.DisplayName("Adı:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.RoleName)
+            </div>
+        </fieldset>
+        <p>
+            @Html.ActionLink("Düzenle", "Edit", new { id = Model.RoleID }) |
+            @Html.ActionLink("Index'e Dön", "Index")
+        </p>
+    </div>

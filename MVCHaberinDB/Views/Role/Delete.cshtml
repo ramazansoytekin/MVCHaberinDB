@@ -1,0 +1,35 @@
+﻿@model MVCHaberinDB.Models.Role
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<div id="Container">
+    <div id="TopBar">
+    </div>
+    <div id="Content">
+
+
+        <h3>Silmek istediğinize emin misiniz?</h3>
+        <fieldset>
+            <legend>Rol</legend>
+
+            <div class="display-label">
+                @Html.DisplayName("Adı:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.RoleName)
+            </div>
+        </fieldset>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <p>
+                <input type="submit" value="Sil" /> |
+                @Html.ActionLink("Index'e Dön", "Index")
+            </p>
+        }
+    </div>
+</div>

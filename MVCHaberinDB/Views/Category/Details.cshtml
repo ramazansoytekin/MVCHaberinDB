@@ -1,0 +1,36 @@
+﻿@model MVCHaberinDB.Models.Category
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div id="Container">
+    <div id="TopBar">
+    </div>
+    <div id="KayitAlan">
+
+        <fieldset>
+            <legend>Kategori</legend>
+
+            <div class="display-label">
+                @Html.DisplayName("Adı:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.CategoryName)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Açıklama:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Description)
+            </div>
+        </fieldset>
+        <p>
+            @Html.ActionLink("Düzenle", "Edit", new { id = Model.CategoryID }) |
+            @Html.ActionLink("Index'e Dön", "Index")
+        </p>
+
+    </div>
+</div>

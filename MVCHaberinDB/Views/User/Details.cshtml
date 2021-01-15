@@ -1,0 +1,120 @@
+﻿@model MVCHaberinDB.Models.User
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+<div id="Container">
+    <div id="TopBar">
+    </div>
+    <div id="Content">
+
+
+        <fieldset>
+            <legend>Kullanıcı</legend>
+
+            <div class="display-label">
+                @Html.DisplayName("Ad:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.FirstName)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Soyad:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.LastName)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Adres:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Address)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Şehir:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.City)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Posta Kodu:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.PostalCode)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Ülke:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Country)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Telefon:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Phone)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Fax:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Fax)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Resim:")
+            </div>
+            <div class="display-field">
+                <img src="~/Content/images/userPhotos/@Model.ImagePath" style="width:150px; height:120px;" />
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("E-Mail:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Email)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Şifre:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Password)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Üyelik Tarihi:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.MembershipDate)
+            </div>
+            
+            <div class="display-label">
+                @Html.DisplayName("Doğum Tarihi:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.BirthDate)
+            </div>
+
+            <div class="display-label">
+                @Html.DisplayName("Rol:")
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Role.RoleName)
+            </div>
+        </fieldset>
+        <p>
+            @Html.ActionLink("Düzenle", "Edit", new { id = Model.UserID }) |
+            @Html.ActionLink("Index'e Dön", "Index")
+        </p>
+    </div>
+</div>

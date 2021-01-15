@@ -1,0 +1,114 @@
+﻿@model MVCHaberinDB.Models.News
+
+@{
+    ViewBag.Title = "Edit"; 
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<div id="Container">
+    <div id="TopBar">
+    </div>
+    <div id="KayitAlan">
+
+
+        @using (Html.BeginForm("Edit", "News", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <fieldset>
+                <legend>Haber</legend>
+
+                @Html.HiddenFor(model => model.NewsID)
+
+                <div class="editor-label">
+                    @Html.Label("Başlık:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.NewsTitle)
+                    @Html.ValidationMessageFor(model => model.NewsTitle)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Açıklama:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.NewsDescription)
+                    @Html.ValidationMessageFor(model => model.NewsDescription)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("İçerik:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.NewsContent)
+                    @Html.ValidationMessageFor(model => model.NewsContent)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Kategori:")
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownList("CategoryID", String.Empty)
+                    @Html.ValidationMessageFor(model => model.CategoryID)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Görüntülenme:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.ViewPoint)
+                    @Html.ValidationMessageFor(model => model.ViewPoint)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Resim:")
+                </div>
+                <div class="editor-field">
+                    <img src="~/Content/images/uploads/@Model.PhotoPath" style="width:150px; height:120px;" />
+                    @Html.ValidationMessageFor(model => model.PhotoPath)<br />
+                    <span>Resim Seç</span>
+                    <input name="fluResim" type="file" />
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Ajans:")
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownList("SupplierID", String.Empty)
+                    @Html.ValidationMessageFor(model => model.SupplierID)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Aktif:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.isDeleted)
+                    @Html.ValidationMessageFor(model => model.isDeleted)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Manşet:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.isBigNew)
+                    @Html.ValidationMessageFor(model => model.isBigNew)
+                </div>
+
+                <p>
+                    <input type="submit" value="Kaydet" />
+                </p>
+            </fieldset>
+        }
+
+        <div>
+            @Html.ActionLink("Index'e Dön", "Index")
+        </div>
+
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+</div>

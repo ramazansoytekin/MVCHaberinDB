@@ -1,0 +1,95 @@
+﻿@model IEnumerable<MVCHaberinDB.Models.Supplier>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<div id="Container">
+    <div id="TopBar">
+    </div>
+    <div id="Content">
+
+        <p>
+            @Html.ActionLink("Ajans Ekle", "Create")
+        </p>
+        <table>
+            <tr>
+                <th>
+                    @Html.DisplayName("Adı")
+                </th>
+                <th>
+                    @Html.DisplayName("Sorumlu")
+                </th>
+                <th>
+                    @Html.DisplayName("Adres")
+                </th>
+                <th>
+                    @Html.DisplayName("Bölge")
+                </th>
+                <th>
+                    @Html.DisplayName("Posta Kodu")
+                </th>
+                <th>
+                    @Html.DisplayName("Ülke")
+                </th>
+                <th>
+                    @Html.DisplayName("Telefon")
+                </th>
+                <th>
+                    @Html.DisplayName("Fax")
+                </th>
+                <th>
+                    @Html.DisplayName("E-Mail")
+                </th>
+                <th>
+                    @Html.DisplayName("Web Adresi")
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompanyName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ContactName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Region)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PostalCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Country)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fax)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HomePage)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Düzenle", "Edit", new { id = item.SupplierID }) |
+                        @Html.ActionLink("Detay", "Details", new { id = item.SupplierID }) |
+                        @Html.ActionLink("Sil", "Delete", new { id = item.SupplierID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

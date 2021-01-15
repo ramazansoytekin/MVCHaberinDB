@@ -1,0 +1,182 @@
+﻿@model List<News>
+@{
+    ViewBag.Title = "Index";
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="~/Content/template/Style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="Container">
+        <div id="TopBar">
+        </div>
+
+        <div id="Showcase">
+            <div id="JSlider">
+                <div class="JSlider">
+                    <ul>
+                        @foreach (News item in Model.Where(n => n.isBigNew == true))
+                        {
+                            <li>
+                                <a href="Customer/NewsDetail/NewsDetail?nID=@item.NewsID">
+                                    <img src="Content/images/uploads/@item.PhotoPath" />
+                                </a>
+                                <div class="desc">
+                                    <h2>@item.NewsTitle</h2>
+                                    <p>@item.NewsDescription</p>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                    <a href="#" id="onceki" class="navButton">«</a>
+                    <a href="#" id="sonraki" class="navButton">»</a>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="Content">
+            <div id="Haberler">
+                <div class="HaberKategoriBaslik">
+                    <h2>Spor</h2>
+                </div>
+                @foreach (News item in Model.Where(n => n.CategoryID == 1).OrderByDescending(n => n.PublishDate).Take(5))
+                {
+                    <div class="Haber">
+                        <a href="Customer/NewsDetail/NewsDetail?nID=@item.NewsID"><img src="Content/images/uploads/@item.PhotoPath" /></a>
+                        <span>
+                            @Html.ActionLink(@item.NewsTitle, "NewsDetail", "Customer", new { nID = item.NewsID }, null)
+                        </span>
+                    </div>
+                }
+                <div style="clear: both"></div>
+            </div>
+
+
+            <div id="Haberler">
+
+                <div class="HaberKategoriBaslik">
+                    <h2>Ekonomi</h2>
+                </div>
+
+                @foreach (News item in Model.Where(n => n.CategoryID == 2).OrderByDescending(n => n.PublishDate).Take(5))
+                {
+                    <div class="Haber">
+                        <a href="Customer/NewsDetail/NewsDetail?nID=@item.NewsID"><img src="Content/images/uploads/@item.PhotoPath" /></a>
+                        <span>
+                            @Html.ActionLink(@item.NewsTitle, "NewsDetail", "Customer", new { nID = item.NewsID }, null)
+                        </span>
+                    </div>
+
+                }
+                <div style="clear: both"></div>
+            </div>
+
+
+            <div id="Haberler">
+                <div class="HaberKategoriBaslik">
+                    <h2>Magazin</h2>
+                </div>
+                @foreach (News item in Model.Where(n => n.CategoryID == 4).OrderByDescending(n => n.PublishDate).Take(5))
+                {
+                    <div class="Haber">
+                        <a href="Customer/NewsDetail/NewsDetail?nID=@item.NewsID"><img src="Content/images/uploads/@item.PhotoPath" /></a>
+                        <span>
+                            @Html.ActionLink(@item.NewsTitle, "NewsDetail", "Customer", new { nID = item.NewsID }, null)
+                        </span>
+                    </div>
+
+                }
+                <div style="clear: both"></div>
+            </div>
+
+        </div>
+
+        <div id="Haberler">
+            <div class="HaberKategoriBaslik">
+                <h2>Emlak</h2>
+            </div>
+            @foreach (News item in Model.Where(n => n.CategoryID == 5).OrderByDescending(n => n.PublishDate).Take(5))
+            {
+                <div class="Haber">
+                    <a href="Customer/NewsDetail/NewsDetail?nID=@item.NewsID"><img src="Content/images/uploads/@item.PhotoPath" /></a>
+                    <span>
+                        @Html.ActionLink(@item.NewsTitle, "NewsDetail", "Customer", new { nID = item.NewsID }, null)
+                    </span>
+
+                </div>
+            }
+            <div style="clear: both"></div>
+        </div>
+
+        <div id="Haberler">
+            <div class="HaberKategoriBaslik">
+                <h2>Sağlık</h2>
+            </div>
+            @foreach (News item in Model.Where(n => n.CategoryID == 6).OrderByDescending(n => n.PublishDate).Take(5))
+            {
+                <div class="Haber">
+                    <a href="Customer/NewsDetail/NewsDetail?nID=@item.NewsID"><img src="Content/images/uploads/@item.PhotoPath" /></a>
+                    <span>
+                        @Html.ActionLink(@item.NewsTitle, "NewsDetail", "Customer", new { nID = item.NewsID }, null)
+                    </span>
+                </div>
+
+            }
+            <div style="clear: both"></div>
+        </div>
+
+        <div id="Haberler">
+            <div class="HaberKategoriBaslik">
+                <h2>Teknoloji</h2>
+            </div>
+            @foreach (News item in Model.Where(n => n.CategoryID == 7).OrderByDescending(n => n.PublishDate).Take(5))
+            {
+                <div class="Haber">
+                    <a href="Customer/NewsDetail/NewsDetail?nID=@item.NewsID"><img src="Content/images/uploads/@item.PhotoPath" /></a>
+                    <span>
+                        @Html.ActionLink(@item.NewsTitle, "NewsDetail", "Customer", new { nID = item.NewsID }, null)
+                    </span>
+                </div>
+            }
+            <div style="clear: both"></div>
+        </div>
+
+        <div id="Haberler">
+            <div class="HaberKategoriBaslik">
+                <h2>Politika</h2>
+            </div>
+            @foreach (News item in Model.Where(n => n.CategoryID == 8).OrderByDescending(n => n.PublishDate).Take(5))
+            {
+                <div class="Haber">
+                    <a href="Customer/NewsDetail/NewsDetail?nID=@item.NewsID"><img src="Content/images/uploads/@item.PhotoPath" /></a>
+                    <span>
+                        @Html.ActionLink(@item.NewsTitle, "NewsDetail", "Customer", new { nID = item.NewsID }, null)
+                    </span>
+                </div>
+
+            }
+            <div style="clear: both"></div>
+        </div>
+        <div id="Haberler">
+            <div class="HaberKategoriBaslik">
+                <h2>Dünya</h2>
+            </div>
+            @foreach (News item in Model.Where(n => n.CategoryID == 9).OrderByDescending(n => n.PublishDate).Take(5))
+            {
+                <div class="Haber">
+                    <a href="Customer/NewsDetail/NewsDetail?nID=@item.NewsID"><img src="Content/images/uploads/@item.PhotoPath" /></a>
+                    <span>
+                        @Html.ActionLink(@item.NewsTitle, "NewsDetail", "Customer", new { nID = item.NewsID }, null)
+                    </span>
+                </div>
+            }
+            <div style="clear: both"></div>
+        </div>
+
+    </div>
+</body>
+</html>

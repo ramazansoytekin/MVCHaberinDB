@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCHaberinDB", "MVCHaberinDB\MVCHaberinDB.csproj", "{69805657-750D-4996-8556-9BF5EEA0DA88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFHaberinDBService", "WCFHaberinDBService\WCFHaberinDBService.csproj", "{2E32F69E-48FA-4CA7-AF04-2859F3866043}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69805657-750D-4996-8556-9BF5EEA0DA88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69805657-750D-4996-8556-9BF5EEA0DA88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69805657-750D-4996-8556-9BF5EEA0DA88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69805657-750D-4996-8556-9BF5EEA0DA88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E32F69E-48FA-4CA7-AF04-2859F3866043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E32F69E-48FA-4CA7-AF04-2859F3866043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E32F69E-48FA-4CA7-AF04-2859F3866043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E32F69E-48FA-4CA7-AF04-2859F3866043}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

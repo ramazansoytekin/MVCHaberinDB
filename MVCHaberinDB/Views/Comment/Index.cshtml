@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MVCHaberinDB.Models.Comment>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div id="Container">
+    <div id="TopBar">
+    </div>
+    <div id="Content">
+
+
+
+        <table>
+            <tr>
+                <th>
+                    @Html.DisplayName("Adı")
+                </th>
+                <th>
+                    @Html.DisplayName("Soyadı")
+                </th>
+                <th>
+                    @Html.DisplayName("İçerik")
+                </th>
+                <th>
+                    @Html.DisplayName("Haber Başlığı")
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.User.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.User.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CommentText)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.News.NewsTitle)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Detay", "Details", new { id = item.CommentID }) |
+                        @Html.ActionLink("Sil", "Delete", new { id = item.CommentID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

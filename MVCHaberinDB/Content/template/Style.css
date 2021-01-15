@@ -1,0 +1,448 @@
+﻿@import url('Reset.css');
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300&subset=latin,latin-ext);
+
+body {
+    color: #020e05;
+    background-color: #fbebc6;
+    font-family: 'Open Sans';
+    font-size: 12px;
+}
+
+.clear {
+    clear: both;
+}
+
+#Header {
+    width: 1000px;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+.HeaderTop {
+    width: 1000px;
+    height: 20px;
+    line-height: 20px;
+    float: left;
+    position: relative;
+}
+
+    .HeaderTop ul {
+        list-style: none;
+        position: absolute;
+        right: 0;
+    }
+
+        .HeaderTop ul li {
+            float: left;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+            .HeaderTop ul li a {
+                color: #525252;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 12px;
+            }
+
+                .HeaderTop ul li a:hover {
+                    color: #000;
+                }
+
+.Logo {
+    width: 80px;
+    height: 80px;
+    float: left;
+    margin-right: 15px;
+}
+
+#Header .Logo img {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    overflow: hidden;
+    float: left;
+}
+
+.Menu {
+    width: 750px;
+    height: 80px;
+    line-height: 80px;
+    float: right;
+    position: relative;
+}
+
+    .Menu ul {
+        list-style: none;
+        position: absolute;
+        right: 0;
+    }
+
+        .Menu ul li {
+            padding-left: 10px;
+            padding-right: 10px;
+            float: left;
+            line-height: 80px;
+        }
+
+            .Menu ul li a {
+                color: #525252;
+                text-decoration: none;
+                font-size: 12px;
+                font-weight: bold;
+            }
+
+                .Menu ul li a:hover {
+                    border-bottom: 2px solid #000;
+                }
+
+#Container {
+    width: 1000px;
+    height: 1000px;
+    margin: 0 auto;
+}
+
+#TopBar {
+    width: 1000px;
+    height: 32px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+    #TopBar td {
+    }
+
+    #TopBar span {
+        padding-top:16px;
+        float: right;
+        color: red;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+#txtAra {
+    width: 260px;
+    height: 20px;
+    border: 1px solid #808080;
+    border-radius: 4px;
+    margin-left: 20px;
+    background-image: url('images/search.png');
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    padding-left: 28px;
+    color: #989898;
+    float: right;
+}
+
+.btnAra {
+    width: 40px;
+    height: 22px;
+    float: right;
+    border: 1px solid #808080;
+    border-radius: 4px;
+}
+
+/*#txtSearch {
+    width: 260px;
+    height: 20px;
+    border: 1px solid #808080;
+    border-radius: 4px;
+    margin-left: 100px;
+    background-image: url('images/search.png');
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    padding-left: 28px;
+    color: #989898;
+    float: right;
+}*/
+
+#Showcase {
+    margin-top: 10px;
+    width: 1000px;
+    height: 410px;
+    background-color: #808080;
+}
+
+    #Showcase img {
+        width: 990px;
+        height: 400px;
+        margin: 5px;
+    }
+
+#Content {
+    width: 1000px;
+    height: auto;
+    border: none;
+    position: relative;
+    margin: auto;
+    margin-top: 30px;
+}
+
+    /*#Content h2{
+    padding: 10px 10px;
+    background-color: #1761b2;
+    font-weight: bold;
+    margin-top: 15px;
+    text-align: center;
+}*/
+
+    #Content p {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+#News {
+    width: 1000px;
+}
+
+
+#Haberler {
+    float: left;
+}
+
+.HaberKategoriBaslik {
+    margin-top: 10px;
+    width: 975px;
+    height: 10px;
+    padding: 10px 10px;
+    background-color: #1761b2;
+    border-radius: 5px;
+    border: 1px solid #000;
+    font-weight: bold;
+    text-align: center;
+}
+
+.Haber {
+    width: 190px;
+    height: 200px;
+    float: left;
+    margin: 4px;
+}
+
+    .Haber a {
+        color: #000;
+        text-decoration: none;
+        font-size: 12px;
+    }
+
+    .Haber img {
+        width: 190px;
+        height: 150px;
+        overflow: hidden;
+        border-radius: 5px;
+        border: 1px solid #000;
+        margin: 5px 5px;
+    }
+
+    .Haber span a {
+        width: 190px;
+        font-family: Arial;
+        font-size: 12px;
+        color: #000;
+    }
+
+
+
+#KullaniciBilgisi {
+    width: 170px;
+    height: 100px;
+    float: left;
+}
+
+/*#Yorumlar {
+    width: 700px;
+    float: left;
+}
+
+#YorumYap {
+    margin-top: 10px;
+    text-align: right;
+}
+
+
+    #YorumYap textarea {
+        width: 694px;
+        height: 200px;
+    }
+
+    #YorumYap button {
+        background-color: #1761b2;
+        border: none;
+        padding: 7px 25px;
+        margin-top: 10px;
+        color: #f6f6f6;
+    }
+
+        #YorumYap button:hover {
+            background-color: #0084f3;
+        }*/
+
+/*.tdc {
+    width: 193px;
+}
+
+.tdf {
+    width: 300px;
+    display: block;
+}*/
+
+#HaberDetay {
+    width: 980px;
+    margin: auto;
+}
+
+    #HaberDetay .HaberSol {
+        width: 570px;
+        float: left;
+        height: auto;
+    }
+
+.HaberUstBilgi {
+    font-size: 13px;
+    font-family: Arial;
+    color: #000;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+.HaberSol img {
+    width: 620px;
+    height: 315px;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+#Yorum {
+    font-size: 15px;
+    color: #000;
+    font-family: Arial;
+    line-height: 4px;
+}
+
+.HaberSag {
+    width: 320px;
+    float: right;
+    height: auto;
+}
+
+.Yazar {
+    width: 280px;
+    height: 220px;
+    margin-top: 30px;
+}
+
+    .Yazar img {
+        width: 160px;
+        height: 160px;
+        margin: 10px 60px;
+        overflow: hidden;
+        border-radius: 5px;
+        border: 1px solid #000;
+    }
+
+    .Yazar span {
+        width: 280px;
+        text-align: center;
+        font-family: Arial;
+        font-size: 12px;
+    }
+
+#yazar {
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Arial;
+    color: #000;
+    margin-left: 60px;
+}
+
+.YanHaber {
+    width: 280px;
+    height: 240px;
+    margin-top: 5px;
+}
+
+    .YanHaber img {
+        width: 280px;
+        height: 200px;
+        margin: 5px 0px;
+        overflow: hidden;
+        border-radius: 5px;
+        border: 1px solid #000;
+    }
+
+    .YanHaber span a {
+        width: 280px;
+        font-family: Arial;
+        font-size: 12px;
+        color: #000;
+    }
+
+    .YanHaber a {
+        color: #000;
+        text-decoration: none;
+        font-size: 12px;
+    }
+
+.HaberBaslik {
+    font-size: 20px;
+    color: #000;
+    margin: 10px 0px;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+.HaberAciklama {
+    font-size: 14px;
+    color: #000;
+    line-height: 22px;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+.HaberDetay {
+    font-size: 14px;
+    color: #000;
+    line-height: 22px;
+    font-family: Arial;
+}
+
+#KayitAlan {
+    width: 270px;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 20px;
+    font-size:14px;
+}
+
+input {
+    width: 250px;
+    height: 30px;
+    margin-bottom: 20px;
+    border: none;
+    margin: 10px 0px;
+    padding: 0px 10px;
+}
+
+.submit {
+    width: 70px;
+    height: 30px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+#Item2_CommentText {
+    width: 250px;
+    height: 50px;
+    margin-bottom: 20px;
+    border: none;
+    margin: 10px 0px;
+    padding: 0px 10px;
+}
+
+.yGonder {
+    width: 270px;
+    height: 35px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}

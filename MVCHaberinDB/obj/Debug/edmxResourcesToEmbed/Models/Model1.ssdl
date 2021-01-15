@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NewsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Description" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="CommentTitle" Type="nvarchar" MaxLength="250" />
+    <Property Name="CommentText" Type="nvarchar" MaxLength="500" />
+    <Property Name="isDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Directors">
+    <Key>
+      <PropertyRef Name="DirectorID" />
+    </Key>
+    <Property Name="DirectorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="30" />
+    <Property Name="BirthDate" Type="datetime" />
+    <Property Name="HireDate" Type="datetime" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReportsTo" Type="int" />
+    <Property Name="Imagepath" Type="nvarchar" MaxLength="250" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RoleID" Type="int" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="NewsID" />
+    </Key>
+    <Property Name="NewsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NewsTitle" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="NewsContent" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="PublishDate" Type="datetime" />
+    <Property Name="ViewPoint" Type="int" />
+    <Property Name="PhotoPath" Type="nvarchar" MaxLength="250" />
+    <Property Name="UnitPrice" Type="money" Nullable="false" />
+    <Property Name="SupplierID" Type="int" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="NewsTypeID" Type="int" />
+    <Property Name="isBigNew" Type="bit" />
+    <Property Name="NewsDescription" Type="nvarchar" MaxLength="250" />
+    <Property Name="CommentID" Type="int" />
+    <Property Name="NewsPicture" Type="nvarchar" MaxLength="250" />
+    <Property Name="DirectorID" Type="int" />
+  </EntityType>
+  <EntityType Name="NewsTypes">
+    <Key>
+      <PropertyRef Name="NewsTypeID" />
+    </Key>
+    <Property Name="NewsTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NewsTypeName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Description" Type="ntext" />
+  </EntityType>
+  <EntityType Name="NewsWritters">
+    <Key>
+      <PropertyRef Name="NewsID" />
+      <PropertyRef Name="WriterID" />
+    </Key>
+    <Property Name="NewsID" Type="int" Nullable="false" />
+    <Property Name="WriterID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderDetails">
+    <Key>
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="NewsID" />
+    </Key>
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="NewsID" Type="int" Nullable="false" />
+    <Property Name="UnitPrice" Type="money" Nullable="false" />
+    <Property Name="Quantity" Type="smallint" Nullable="false" />
+    <Property Name="Discount" Type="real" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="Total" Type="money" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sliders">
+    <Key>
+      <PropertyRef Name="SliderID" />
+    </Key>
+    <Property Name="SliderID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="250" />
+    <Property Name="BannerPath" Type="nvarchar" MaxLength="250" />
+    <Property Name="DirectorID" Type="int" />
+    <Property Name="isDeleted" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Suppliers">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ContactName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="Region" Type="nvarchar" MaxLength="20" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="Country" Type="nvarchar" MaxLength="15" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="24" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="24" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="HomePage" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="20" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="20" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="20" />
+    <Property Name="Region" Type="nvarchar" MaxLength="20" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="Country" Type="nvarchar" MaxLength="15" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="24" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="24" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MembershipDate" Type="datetime" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BirthDate" Type="date" />
+    <Property Name="RoleID" Type="int" />
+  </EntityType>
+  <EntityType Name="Writers">
+    <Key>
+      <PropertyRef Name="WriterID" />
+    </Key>
+    <Property Name="WriterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <Association Name="FK_Comments_Users1">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Directors_Directors">
+    <End Role="Directors" Type="Self.Directors" Multiplicity="0..1" />
+    <End Role="Directors1" Type="Self.Directors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Directors">
+        <PropertyRef Name="DirectorID" />
+      </Principal>
+      <Dependent Role="Directors1">
+        <PropertyRef Name="ReportsTo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Directors_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="Directors" Type="Self.Directors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="Directors">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_Categories">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="News" Type="Self.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_Comments">
+    <End Role="Comments" Type="Self.Comments" Multiplicity="0..1" />
+    <End Role="News" Type="Self.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comments">
+        <PropertyRef Name="CommentID" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="CommentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_Directors">
+    <End Role="Directors" Type="Self.Directors" Multiplicity="0..1" />
+    <End Role="News" Type="Self.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Directors">
+        <PropertyRef Name="DirectorID" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="DirectorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_Suppliers">
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
+    <End Role="News" Type="Self.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_Types">
+    <End Role="NewsTypes" Type="Self.NewsTypes" Multiplicity="0..1" />
+    <End Role="News" Type="Self.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NewsTypes">
+        <PropertyRef Name="NewsTypeID" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="NewsTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NewsWritters_News">
+    <End Role="News" Type="Self.News" Multiplicity="1" />
+    <End Role="NewsWritters" Type="Self.NewsWritters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="News">
+        <PropertyRef Name="NewsID" />
+      </Principal>
+      <Dependent Role="NewsWritters">
+        <PropertyRef Name="NewsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NewsWritters_Writers">
+    <End Role="Writers" Type="Self.Writers" Multiplicity="1" />
+    <End Role="NewsWritters" Type="Self.NewsWritters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Writers">
+        <PropertyRef Name="WriterID" />
+      </Principal>
+      <Dependent Role="NewsWritters">
+        <PropertyRef Name="WriterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetails_News">
+    <End Role="News" Type="Self.News" Multiplicity="1" />
+    <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="News">
+        <PropertyRef Name="NewsID" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="NewsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderDetails_Orders">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+    <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sliders_Directors">
+    <End Role="Directors" Type="Self.Directors" Multiplicity="0..1" />
+    <End Role="Sliders" Type="Self.Sliders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Directors">
+        <PropertyRef Name="DirectorID" />
+      </Principal>
+      <Dependent Role="Sliders">
+        <PropertyRef Name="DirectorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NewsDBModelStoreContainer">
+    <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comments" EntityType="Self.Comments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Directors" EntityType="Self.Directors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NewsTypes" EntityType="Self.NewsTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NewsWritters" EntityType="Self.NewsWritters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sliders" EntityType="Self.Sliders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Writers" EntityType="Self.Writers" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Comments_Users1" Association="Self.FK_Comments_Users1">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Directors_Directors" Association="Self.FK_Directors_Directors">
+      <End Role="Directors" EntitySet="Directors" />
+      <End Role="Directors1" EntitySet="Directors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Directors_Roles" Association="Self.FK_Directors_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Directors" EntitySet="Directors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_Categories" Association="Self.FK_News_Categories">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_Comments" Association="Self.FK_News_Comments">
+      <End Role="Comments" EntitySet="Comments" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_Directors" Association="Self.FK_News_Directors">
+      <End Role="Directors" EntitySet="Directors" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_Suppliers" Association="Self.FK_News_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_Types" Association="Self.FK_News_Types">
+      <End Role="NewsTypes" EntitySet="NewsTypes" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NewsWritters_News" Association="Self.FK_NewsWritters_News">
+      <End Role="News" EntitySet="News" />
+      <End Role="NewsWritters" EntitySet="NewsWritters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NewsWritters_Writers" Association="Self.FK_NewsWritters_Writers">
+      <End Role="Writers" EntitySet="Writers" />
+      <End Role="NewsWritters" EntitySet="NewsWritters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetails_News" Association="Self.FK_OrderDetails_News">
+      <End Role="News" EntitySet="News" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderDetails_Orders" Association="Self.FK_OrderDetails_Orders">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Users" Association="Self.FK_Orders_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sliders_Directors" Association="Self.FK_Sliders_Directors">
+      <End Role="Directors" EntitySet="Directors" />
+      <End Role="Sliders" EntitySet="Sliders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

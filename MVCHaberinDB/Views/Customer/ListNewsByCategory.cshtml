@@ -1,0 +1,28 @@
+﻿@model List<News>
+@{
+    ViewBag.Title = "ListNewsByCategory";
+}
+
+<div id="TopBar">
+</div>
+<div id="Content">
+    <div id="Haberler">
+        <div class="HaberKategoriBaslik">
+            <h2>Haberler</h2>
+        </div>
+        @if (ViewBag.Message != null)
+        {
+            @ViewBag.Message
+        }
+        else
+        {
+            foreach (News item in Model)
+            {
+                <div class="Haber">
+                    <a href="/Customer/NewsDetail/NewsDetail?nID=@item.NewsID"><img src="~/Content/images/uploads/@item.PhotoPath" /></a>
+                    <span>@Html.ActionLink(@item.NewsTitle, "NewsDetail", "Customer", new { nID = item.NewsID }, null)</span>
+                </div>
+            }
+        }
+    </div>
+</div>

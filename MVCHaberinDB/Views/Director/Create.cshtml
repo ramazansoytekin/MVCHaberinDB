@@ -1,0 +1,126 @@
+﻿@model MVCHaberinDB.Models.Director
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div id="Container">
+    <div id="TopBar">
+    </div>
+    <div id="KayitAlan">
+
+
+        @using (Html.BeginForm("Create", "Director", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <fieldset>
+                <legend>Yönetici</legend>
+
+                <div class="editor-label">
+                    @Html.Label("Adı:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.FirstName)
+                    @Html.ValidationMessageFor(model => model.FirstName)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Soyadı:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.LastName)
+                    @Html.ValidationMessageFor(model => model.LastName)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Ünvan:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Title)
+                    @Html.ValidationMessageFor(model => model.Title)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Doğum Tarihi:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.BirthDate)
+                    @Html.ValidationMessageFor(model => model.BirthDate)
+                    <span>GÜN,AY,YIL olarak giriniz!</span>
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Kovulma Tarihi:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.HireDate)
+                    @Html.ValidationMessageFor(model => model.HireDate)
+                    <span>GÜN,AY,YIL olarak giriniz!</span>
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Adres:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Address)
+                    @Html.ValidationMessageFor(model => model.Address)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Amiri:")
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownList("ReportsTo", String.Empty)
+                    @Html.ValidationMessageFor(model => model.ReportsTo)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Resim:")
+                </div>
+                <div class="editor-field">
+                    <span>Resim Seç</span>
+                    <input name="fluResim" type="file" />
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("E-Mail:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Şifre:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Password)
+                    @Html.ValidationMessageFor(model => model.Password)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Rol:")
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownList("RoleID", String.Empty)
+                    @Html.ValidationMessageFor(model => model.RoleID)
+                </div>
+
+                <p>
+                    <input type="submit" value="Kaydet" />
+                </p>
+            </fieldset>
+        }
+
+        <div>
+            @Html.ActionLink("Index'e Dön", "Index")
+        </div>
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+    </div>
+
+</div>

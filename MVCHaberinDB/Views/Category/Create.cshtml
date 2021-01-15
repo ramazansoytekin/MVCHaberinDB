@@ -1,0 +1,51 @@
+﻿@model MVCHaberinDB.Models.Category
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div id="Container">
+    <div id="TopBar">
+    </div>
+    <div id="KayitAlan">  
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <fieldset>
+                <legend>Kategori</legend>
+
+                <div class="editor-label">
+                    @Html.Label("Adı:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.CategoryName)
+                    @Html.ValidationMessageFor(model => model.CategoryName)
+                </div>
+
+                <div class="editor-label">
+                    @Html.Label("Açıklama:")
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Description)
+                    @Html.ValidationMessageFor(model => model.Description)
+                </div>
+
+                <p>
+                    <input type="submit" value="Kaydet" />
+                </p>
+            </fieldset>
+        }
+
+        <div>
+            @Html.ActionLink("Index'e Dön", "Index")
+        </div>
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+    </div>
+</div>

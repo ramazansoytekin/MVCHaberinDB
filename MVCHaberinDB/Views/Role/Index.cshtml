@@ -1,0 +1,40 @@
+﻿@model IEnumerable<MVCHaberinDB.Models.Role>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div id="Container">
+    <div id="TopBar">
+    </div>
+    <div id="Content">
+
+        <p>
+            @Html.ActionLink("Rol Ekle", "Create")
+        </p>
+        <table>
+            <tr>
+                <th>
+                    @Html.DisplayName("Adı")
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RoleName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Düzenle", "Edit", new { id = item.RoleID }) |
+                        @Html.ActionLink("Detay", "Details", new { id = item.RoleID }) |
+                        @Html.ActionLink("Sil", "Delete", new { id = item.RoleID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{69805657-750D-4996-8556-9BF5EEA0DA88}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MVCHaberinDB</RootNamespace>
+    <AssemblyName>MVCHaberinDB</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\DirectorController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\SupplierController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\WriterController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>NewsDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CeoAuthorize.cs" />
+    <Compile Include="Models\Comment.cs">
+      <DependentUpon>NewsDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Director.cs">
+      <DependentUpon>NewsDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DirectorAuthorize.cs" />
+    <Compile Include="Models\EmployeeAuthorize.cs" />
+    <Compile Include="Models\News.cs">
+      <DependentUpon>NewsDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewsDBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewsDBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewsDBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewsDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewsDBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewsDBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Role.cs">
+      <DependentUpon>NewsDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Supplier.cs">
+      <DependentUpon>NewsDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>NewsDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserAuthorize.cs" />
+    <Compile Include="Models\Writer.cs">
+      <DependentUpon>NewsDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Yorum.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\admintemplate\Style.css" />
+    <Content Include="Content\images\directorPhotos\536f0a8a_d11d_4aa3_94b2_c323eefe73a3.png" />
+    <Content Include="Content\images\uploads\0509bb55_51b4_4bff_9900_f84989aad29c.jpeg" />
+    <Content Include="Content\images\uploads\0999b907_8d18_458b_9667_872b81bb9e87.jpeg" />
+    <Content Include="Content\images\uploads\0f7adc0f_a7b1_4490_a978_375a7cd6cc43.jpeg" />
+    <Content Include="Content\images\uploads\14ebc3b0_0ca1_484c_9457_e9810be3e7e1.jpeg" />
+    <Content Include="Content\images\uploads\1c267256_22d8_476f_8e31_f1a901fd8c18.jpeg" />
+    <Content Include="Content\images\uploads\2461a0da_4d92_4e9e_8237_4e573c58e71d.jpeg" />
+    <Content Include="Content\images\uploads\254fba89_c7ef_4de7_b8d0_3d2f4e7a41a8.jpeg" />
+    <Content Include="Content\images\uploads\26ab8ff2_4ba9_4879_84a6_407e13e891a6.jpeg" />
+    <Content Include="Content\images\uploads\26af43c2_e5ff_418d_b55e_6767729effae.jpeg" />
+    <Content Include="Content\images\uploads\32733706_63a5_462e_b0d8_e79865743f33.jpeg" />
+    <Content Include="Content\images\uploads\36278496_9c89_48f0_88d1_d181dbd45f54.jpeg" />
+    <Content Include="Content\images\uploads\39bdba45_6b56_4862_afe6_7b5e76f30225.jpeg" />
+    <Content Include="Content\images\uploads\3a558f10_fbe5_46f6_a5a8_7553559b0840.jpeg" />
+    <Content Include="Content\images\uploads\3dd187c1_8e58_40e1_8cff_1c122e059cf5.jpeg" />
+    <Content Include="Content\images\uploads\406ed703_4cd1_4e3b_846d_978c6d949e5a.jpeg" />
+    <Content Include="Content\images\uploads\436bfce0_6ff6_481d_a80e_9f2ece49462f.jpeg" />
+    <Content Include="Content\images\uploads\43ec0a9e_6f1a_426c_9d94_7df2df64ee0d.jpeg" />
+    <Content Include="Content\images\uploads\4448f5ee_ebd6_4898_a25c_a082fdbf6d4d.jpeg" />
+    <Content Include="Content\images\uploads\4603c337_b6a7_4886_bb4e_d3495cc983f1.jpeg" />
+    <Content Include="Content\images\uploads\48597245_7ca7_450c_adef_294bc14c99c8.jpeg" />
+    <Content Include="Content\images\uploads\4a921409_67fb_4011_8946_7a5dd0060913.jpeg" />
+    <Content Include="Content\images\uploads\4ca821e4_73c5_4a84_8926_28730989ddf6.jpeg" />
+    <Content Include="Content\images\uploads\53a56de5_8969_437b_ac97_1e6b0607459c.jpeg" />
+    <Content Include="Content\images\uploads\54660ddd_b9b0_482d_94e6_7e4f34301995.jpeg" />
+    <Content Include="Content\images\uploads\62157a52_c878_49a7_a60e_34334cf09d2d.jpeg" />
+    <Content Include="Content\images\uploads\62834724_76e2_4ebf_aa3a_ed8af746d4ab.jpeg" />
+    <Content Include="Content\images\uploads\68c3d1e9_103c_4768_b193_77ccb70c4b3e.jpeg" />
+    <Content Include="Content\images\uploads\6b3b378c_4a9d_4c02_a70e_e5eee6197e72.jpeg" />
+    <Content Include="Content\images\uploads\7277eebc_cadb_457d_8cf5_08d4467e2b4f.jpeg" />
+    <Content Include="Content\images\uploads\72a8133a_f348_4f4c_bfc0_2ee89949acab.jpeg" />
+    <Content Include="Content\images\uploads\7b8591dd_3764_4d4c_9974_70cb9d1ec292.jpeg" />
+    <Content Include="Content\images\uploads\7c071255_5bf7_4722_acfe_cdffd4a92053.jpeg" />
+    <Content Include="Content\images\uploads\7cf4576c_10e2_4161_a744_c963c3ee7c5c.jpeg" />
+    <Content Include="Content\images\uploads\7d30cc72_17ae_44b9_bf0f_e2864b5f958a.jpeg" />
+    <Content Include="Content\images\uploads\7f443843_15b4_4528_ab99_31a1ab4ae74b.jpeg" />
+    <Content Include="Content\images\uploads\814d231c_f259_46d4_b7fe_f16e40ffad0b.jpeg" />
+    <Content Include="Content\images\uploads\81bd1206_f44a_4784_9c6d_f18848aa655a.jpeg" />
+    <Content Include="Content\images\uploads\86218d5f_9f43_44b1_9b69_1f8adcbf1711.jpeg" />
+    <Content Include="Content\images\uploads\8c00f339_34ab_4e3f_a347_7142687a2551.jpeg" />
+    <Content Include="Content\images\uploads\915e4860_c7c4_415e_9ce5_4a2ddee93f99.jpeg" />
+    <Content Include="Content\images\uploads\95e47c91_9cb5_4352_8109_6912f825b3b6.jpeg" />
+    <Content Include="Content\images\uploads\976b4563_af0c_4894_a52a_83f99564442b.jpeg" />
+    <Content Include="Content\images\uploads\97f48aba_0907_4dab_938c_d7860e8a999f.jpeg" />
+    <Content Include="Content\images\uploads\a1f71d68_98ac_4575_9fff_1440a3930351.jpeg" />
+    <Content Include="Content\images\uploads\a2267a07_7ff0_46b8_ba63_eb6abe1dca58.jpeg" />
+    <Content Include="Content\images\uploads\a8fc61b3_7b2a_49e4_9822_b363c27a16c0.jpeg" />
+    <Content Include="Content\images\uploads\b363b318_edd7_4fa4_8eb4_6e2c67d2679a.jpeg" />
+    <Content Include="Content\images\uploads\b6a89c27_7182_47e9_b83d_49cc3fdcbf88.jpeg" />
+    <Content Include="Content\images\uploads\bc5a2d21_75c0_4595_a018_426ca58f6c08.jpeg" />
+    <Content Include="Content\images\uploads\c0e39008_b1f2_4b41_8af3_0df72a3c1a4d.jpeg" />
+    <Content Include="Content\images\uploads\c26358e8_7977_4b64_bf82_61927a2f1e7d.jpeg" />
+    <Content Include="Content\images\uploads\c85cc08e_8845_476a_b467_c5344b96510c.jpeg" />
+    <Content Include="Content\images\uploads\c8c5b695_15d2_450f_9c40_38f4d0c4729a.jpeg" />
+    <Content Include="Content\images\uploads\cf6e6114_10f7_4c99_8754_418a96776519.jpeg" />
+    <Content Include="Content\images\uploads\d2af6e50_fa22_4466_bc94_e6cc1d8b2385.jpeg" />
+    <Content Include="Content\images\uploads\d5c3f705_40b4_426d_9bcb_061c590ad6d2.jpeg" />
+    <Content Include="Content\images\uploads\d83d153f_e6cb_4b78_a8fb_54196f784064.jpeg" />
+    <Content Include="Content\images\uploads\db36049f_89e1_40b6_bb41_d261cfcee498.jpeg" />
+    <Content Include="Content\images\uploads\e1560c49_a083_42bd_8047_078932c2bd91.jpeg" />
+    <Content Include="Content\images\uploads\e782f085_e636_4d6f_9a43_7ad482671540.jpeg" />
+    <Content Include="Content\images\uploads\f3fbbf3e_fe69_4a40_a23c_d24f9b7c38ad.jpeg" />
+    <Content Include="Content\images\uploads\f753ebca_948f_466e_b7d5_bf03ec00d9bd.jpeg" />
+    <Content Include="Content\images\uploads\fd3ddf2a_bef8_4848_ab95_aaa39594ebdb.jpeg" />
+    <Content Include="Content\images\userPhotos\75dde94e_2177_4629_9d08_75e63c07d1b0.jpeg" />
+    <Content Include="Content\images\writerPhotos\196abcc7_42cf_428b_8db2_72ed796d009e.jpeg" />
+    <Content Include="Content\images\writerPhotos\7c528718_8a9f_40eb_8bca_b3606b132fee.jpeg" />
+    <Content Include="Content\images\writerPhotos\noimage.png" />
+    <Content Include="Content\template\images\log.png" />
+    <Content Include="Content\template\images\search.png" />
+    <Content Include="Content\template\Login.css" />
+    <Content Include="Content\template\Reset.css" />
+    <Content Include="Content\template\Style.css" />
+    <Content Include="Global.asax" />
+    <EntityDeploy Include="Models\NewsDBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NewsDBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\NewsDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NewsDBModel.edmx</DependentUpon>
+      <LastGenOutput>NewsDBModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\NewsDBModel.edmx.diagram">
+      <DependentUpon>NewsDBModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\NewsDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NewsDBModel.edmx</DependentUpon>
+      <LastGenOutput>NewsDBModel.cs</LastGenOutput>
+    </Content>
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\JSliders\JSlider\jquery-1.11.1.min.js" />
+    <Content Include="Scripts\JSliders\JSlider\JSlider_js.js" />
+    <Content Include="Scripts\JSliders\JSlider\JSlider_Style.css" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Customer\NewsDetail.cshtml" />
+    <Content Include="Views\Customer\Delete.cshtml" />
+    <Content Include="Views\Customer\Edit.cshtml" />
+    <Content Include="Views\Customer\Details.cshtml" />
+    <Content Include="Views\Home\Exit.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\SingUp.cshtml" />
+    <Content Include="Views\Home\NewsDetail.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Error\Yetkisiz.cshtml" />
+    <Content Include="Views\Home\ListNewsByCategory.cshtml" />
+    <Content Include="Views\Customer\ListNewsByCategory.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\Delete.cshtml" />
+    <Content Include="Views\Category\Details.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Comment\Delete.cshtml" />
+    <Content Include="Views\Comment\Details.cshtml" />
+    <Content Include="Views\Comment\Index.cshtml" />
+    <Content Include="Views\Director\Create.cshtml" />
+    <Content Include="Views\Director\Details.cshtml" />
+    <Content Include="Views\Director\Edit.cshtml" />
+    <Content Include="Views\Director\Index.cshtml" />
+    <Content Include="Views\News\Create.cshtml" />
+    <Content Include="Views\Director\Delete.cshtml" />
+    <Content Include="Views\News\Delete.cshtml" />
+    <Content Include="Views\News\Details.cshtml" />
+    <Content Include="Views\News\Edit.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Role\Delete.cshtml" />
+    <Content Include="Views\Role\Details.cshtml" />
+    <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Supplier\Create.cshtml" />
+    <Content Include="Views\Supplier\Delete.cshtml" />
+    <Content Include="Views\Supplier\Details.cshtml" />
+    <Content Include="Views\Supplier\Edit.cshtml" />
+    <Content Include="Views\Supplier\Index.cshtml" />
+    <Content Include="Views\User\Details.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Writer\Create.cshtml" />
+    <Content Include="Views\Writer\Delete.cshtml" />
+    <Content Include="Views\Writer\Details.cshtml" />
+    <Content Include="Views\Writer\Edit.cshtml" />
+    <Content Include="Views\Writer\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49745</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49740/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

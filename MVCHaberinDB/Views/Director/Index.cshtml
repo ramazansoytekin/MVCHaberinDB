@@ -1,0 +1,100 @@
+﻿@model IEnumerable<MVCHaberinDB.Models.Director>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+<div id="Container">
+    <div id="TopBar">
+    </div>
+    <div id="Content">
+    </div>
+
+    <p>
+        @Html.ActionLink("Yönetici Ekle", "Create")
+    </p>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayName("Adı")
+            </th>
+            <th>
+                @Html.DisplayName("Soyadı")
+            </th>
+            <th>
+                @Html.DisplayName("Ünvan")
+            </th>
+            <th>
+                @Html.DisplayName("Doğum Tarihi")
+            </th>
+            <th>
+                @Html.DisplayName("Kovulma Tarihi")
+            </th>
+            <th>
+                @Html.DisplayName("Adres")
+            </th>
+            <th>
+                @Html.DisplayName("Amiri")
+            </th>
+            <th>
+                @Html.DisplayName("Resim")
+            </th>
+            <th>
+                @Html.DisplayName("E-Mail")
+            </th>
+            <th>
+                @Html.DisplayName("Şifre")
+            </th>
+            <th>
+                @Html.DisplayName("Rol")
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BirthDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HireDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Director1.FirstName)
+                </td>
+                <td>
+                    <img src="~/Content/images/directorPhotos/@item.Imagepath" style="width:150px; height:120px;" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Role.RoleName)
+                </td>
+                <td>
+                    @Html.ActionLink("Düzenle", "Edit", new { id = item.DirectorID }) |
+                    @Html.ActionLink("Detay", "Details", new { id = item.DirectorID }) |
+                    @Html.ActionLink("Sil", "Delete", new { id = item.DirectorID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
